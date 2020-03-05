@@ -2,11 +2,7 @@ import {getNumbers} from '../modules/task6.js';
 
 export function testTask6 (ass) {
     describe('Проверка задания 6 "Числовая последовательность"', () => {
-        it('Проверка ввода корректных данных', () => {
-            ass.equal(getNumbers(10, 4), '2,3,4,5,6,7,8,9,10,11');
-            ass.equal(getNumbers(3, 25), '5,6,7');
-            ass.equal(getNumbers(5, 625), '25,26,27,28,29');
-        });
+        
 
         it('Проверка преобразования отрицательных чисел по модулю', () => {
             ass.equal(getNumbers(-10, 4), '2,3,4,5,6,7,8,9,10,11');
@@ -37,14 +33,22 @@ export function testTask6 (ass) {
             });
         });
 
-        it('Проверка ввода всех аргументов функции', () => {
-            ass.deepEqual(getNumbers(), {
-                status:'failed', 
-                reason: 'Введите 2 аргумента: длина и минимальный квадрат'
+        describe('Проверка корректного ввода аргументов', () => {
+            it('Проверка ввода всех аргументов функции', () => {
+                ass.deepEqual(getNumbers(), {
+                    status:'failed', 
+                    reason: 'Введите 2 аргумента: длина и минимальный квадрат'
+                });
+                ass.deepEqual(getNumbers(3), {
+                    status:'failed', 
+                    reason: 'Введите 2 аргумента: длина и минимальный квадрат'
+                });
             });
-            ass.deepEqual(getNumbers(3), {
-                status:'failed', 
-                reason: 'Введите 2 аргумента: длина и минимальный квадрат'
+
+            it('Проверка ввода корректных данных', () => {
+                ass.equal(getNumbers(10, 4), '2,3,4,5,6,7,8,9,10,11');
+                ass.equal(getNumbers(3, 25), '5,6,7');
+                ass.equal(getNumbers(5, 625), '25,26,27,28,29');
             });
         });
     });

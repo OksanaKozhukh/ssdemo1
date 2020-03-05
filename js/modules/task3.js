@@ -1,5 +1,12 @@
 export function sortTriangle (arr) {
 
+    if (arguments.length != 1) {
+        return {
+            status:'failed', 
+            reason: 'Введите массив объектов треугольник'
+        };
+    }
+
     let newArr = [];
     let validation = validationSortTriangle (arr);
 

@@ -2,12 +2,7 @@ import {checkPolindrome} from '../modules/task4.js';
 
 export function testTask4 (ass) {
     describe('Проверка задания 4 "Палиндром"', () => {
-        it('Проверка ввода корректных данных', () => {
-            ass.equal(checkPolindrome(12345665), 5665);
-            ass.equal(checkPolindrome(1122233333), 33333);
-            ass.equal(checkPolindrome(98789123256), 98789);
-        });
-
+        
         it('Проверка преобразования отрицательных чисел по модулю', () => {
             ass.equal(checkPolindrome(-12345665), 5665);
             ass.equal(checkPolindrome(-1122233333), 33333);
@@ -29,10 +24,18 @@ export function testTask4 (ass) {
             });
         });
 
-        it('Проверка ввода всех аргументов функции', () => {
-            ass.deepEqual(checkPolindrome(), {
-                status:'failed', 
-                reason: 'Введите 1 аргумент: число'
+        describe ('Проверка корректного ввода аргументов', () => {
+            it('Проверка ввода всех аргументов функции', () => {
+                ass.deepEqual(checkPolindrome(), {
+                    status:'failed', 
+                    reason: 'Введите 1 аргумент: число'
+                });
+            });
+            
+            it('Проверка ввода корректных данных', () => {
+                ass.equal(checkPolindrome(12345665), 5665);
+                ass.equal(checkPolindrome(1122233333), 33333);
+                ass.equal(checkPolindrome(98789123256), 98789);
             });
         });
 

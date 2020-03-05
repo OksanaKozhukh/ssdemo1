@@ -7,18 +7,15 @@ export function getLuckyTicket (obj) {
         };
     }
 
+    let min = obj.min;
+    let max = obj.max;
+
     let validation = validationGetLuckyTicket (obj);
 
     if (typeof validation === 'object') {
         return validation;
     }
-   
-    let min = obj.min;
-    let max = obj.max;
 
-    min = min < 0? Math.abs(min): min;
-    max = max < 0? Math.abs(max): max;
-  
     let countSimple = 0;
     let countHard = 0;
     let arr = [];
@@ -135,3 +132,4 @@ function validationGetLuckyTicket (obj) {
 
 }
 
+console.log(getLuckyTicket({min:125096, max: -136598}));

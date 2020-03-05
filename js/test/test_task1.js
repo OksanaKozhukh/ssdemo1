@@ -55,6 +55,21 @@ export function testTask1 (ass) {
             
         });
 
+        it('Проверка типов аргументов', () => {
+            ass.deepEqual(createCheeseBoard('ww', 12, '*'), {
+                status:'failed', 
+                reason: 'Введите значение высоты в виде числа'
+            });
+            ass.deepEqual(createCheeseBoard(10, 'ty', '*'), {
+                status:'failed', 
+                reason: 'Введите значение ширины в виде числа'
+            });  
+            ass.deepEqual(createCheeseBoard(10, 25, 9), {
+                status:'failed', 
+                reason: 'Введите символ для отображения в виде строки'
+            });             
+        });
+
         describe('Проверка корректного ввода аргументов', () => {
             it('Проверка ввода всех аргументов функции', () => {
                 ass.deepEqual(createCheeseBoard(), {
@@ -71,19 +86,10 @@ export function testTask1 (ass) {
                 });            
             });
 
-            it('Проверка типов аргументов', () => {
-                ass.deepEqual(createCheeseBoard('ww', 12, '*'), {
-                    status:'failed', 
-                    reason: 'Введите значение высоты в виде числа'
-                });
-                ass.deepEqual(createCheeseBoard(10, 'ty', '*'), {
-                    status:'failed', 
-                    reason: 'Введите значение ширины в виде числа'
-                });  
-                ass.deepEqual(createCheeseBoard(10, 25, 9), {
-                    status:'failed', 
-                    reason: 'Введите символ для отображения в виде строки'
-                });             
+            it('Проверка ввода корректных данных', () => {
+                ass.equal(createCheeseBoard(1, 1, 's'), 's \n');
+                ass.equal(createCheeseBoard(1, 7, 'flower'), 'f f f f \n');
+                
             });
 
         })
