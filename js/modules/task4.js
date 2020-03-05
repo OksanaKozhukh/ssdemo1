@@ -9,7 +9,7 @@ export function checkPolindrome (num) {
 
     let validation = validationCheckPolindrome (num);
 
-    if (typeof validation === 'object') {
+    if (validation ) {
         return validation;
     }
 

@@ -10,7 +10,7 @@ export function sortTriangle (arr) {
     let newArr = [];
     let validation = validationSortTriangle (arr);
 
-    if (typeof validation === 'object') {
+    if (validation) {
         return validation;
     }
    

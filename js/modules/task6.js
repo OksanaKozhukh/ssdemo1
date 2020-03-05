@@ -11,7 +11,7 @@ export function getNumbers (length, pow) {
     let i = 0;
     let validation = validationGetNumbers (length, pow);
 
-    if (typeof validation === 'object') {
+    if (validation) {
         return validation;
     }
 

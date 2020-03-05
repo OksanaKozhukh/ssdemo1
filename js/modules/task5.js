@@ -12,7 +12,7 @@ export function getLuckyTicket (obj) {
 
     let validation = validationGetLuckyTicket (obj);
 
-    if (typeof validation === 'object') {
+    if (validation) {
         return validation;
     }
 

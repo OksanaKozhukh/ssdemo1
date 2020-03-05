@@ -10,7 +10,7 @@ export function createCheeseBoard (height, width, char) {
     let board = "";
     let validation = validationCreateCheeseBoard (height, width, char);
     
-    if (typeof validation === 'object') {
+    if (validation ) {
         return validation;
     }
 

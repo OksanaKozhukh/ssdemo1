@@ -9,7 +9,7 @@ export function fibRow(obj) {
 
     let validation = validationFibRow(obj);
 
-    if (typeof validation === 'object') {
+    if (validation) {
         return validation;
     }
 

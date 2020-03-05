@@ -9,7 +9,7 @@ export function rectangleInRectangle (obj1, obj2){
     
     let validation = validationRectangleInRectangle (obj1, obj2) ;
 
-    if (typeof validation === 'object') {
+    if (validation) {
         return validation;
     }
 
